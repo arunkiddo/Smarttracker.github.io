@@ -19,7 +19,7 @@
   "bugs": {
     "url": "https://github.com/arunkiddo/Smarttracker.github.io/issues"
   },
-  "homepage": "https://smarttracker.github.io/",
+  "homepage": "https://arunkiddo.github.io/Smarttracker.github.io/",
   "dependencies": {
     "@vitejs/plugin-react": "^6.0.1",
     "gh-pages": "^6.3.0",
