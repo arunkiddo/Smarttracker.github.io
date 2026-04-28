@@ -1,0 +1,9 @@
+{
+  "$schema": "node_modules/wrangler/config-schema.json",
+  "name": "smarttracker-groq-proxy",
+  "main": "server/groq-proxy-example.ts",
+  "compatibility_date": "2026-04-28",
+  "vars": {
+    "ALLOWED_ORIGINS": "https://arunkiddo.github.io,http://localhost:5173"
+  }
+}

@@ -1,13 +1,14 @@
 interface Env {
   GROQ_API_KEY: string;
   ALLOWED_ORIGIN?: string;
+  ALLOWED_ORIGINS?: string;
 }
 
 const model = "llama-3.1-8b-instant";
 
 export default {
   async fetch(request: Request, env: Env) {
-    const origin = env.ALLOWED_ORIGIN ?? "*";
+    const origin = getAllowedOrigin(request, env);
     const corsHeaders = {
       "Access-Control-Allow-Origin": origin,
       "Access-Control-Allow-Headers": "Content-Type",
@@ -69,3 +70,14 @@ Return only JSON with category, confidence from 0 to 1, and a short reason.`;
     });
   },
 };
+
+function getAllowedOrigin(request: Request, env: Env) {
+  const requestOrigin = request.headers.get("Origin");
+  const configuredOrigins = env.ALLOWED_ORIGINS ?? env.ALLOWED_ORIGIN;
+  if (!configuredOrigins || configuredOrigins === "*") {
+    return "*";
+  }
+
+  const allowedOrigins = configuredOrigins.split(",").map((origin) => origin.trim());
+  return requestOrigin && allowedOrigins.includes(requestOrigin) ? requestOrigin : allowedOrigins[0];
+}

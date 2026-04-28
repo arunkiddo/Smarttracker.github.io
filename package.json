@@ -4,6 +4,9 @@
   "description": "Browser-first cash flow tracker for bank statements.",
   "scripts": {
     "dev": "vite",
+    "proxy": "node server/local-groq-proxy.mjs",
+    "worker:deploy": "wrangler deploy",
+    "worker:secret": "wrangler secret put GROQ_API_KEY",
     "build": "tsc -b && vite build",
     "preview": "vite preview",
     "deploy": "npm run build && gh-pages -d dist"
@@ -35,6 +38,7 @@
   },
   "devDependencies": {
     "@types/react": "^19.2.7",
-    "@types/react-dom": "^19.2.3"
+    "@types/react-dom": "^19.2.3",
+    "wrangler": "^4.86.0"
   }
 }
