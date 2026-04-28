@@ -1,0 +1,40 @@
+{
+  "name": "smarttracker.github.io",
+  "version": "1.0.0",
+  "description": "Browser-first cash flow tracker for bank statements.",
+  "scripts": {
+    "dev": "vite",
+    "build": "tsc -b && vite build",
+    "preview": "vite preview",
+    "deploy": "npm run build && gh-pages -d dist"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/arunkiddo/Smarttracker.github.io.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "module",
+  "bugs": {
+    "url": "https://github.com/arunkiddo/Smarttracker.github.io/issues"
+  },
+  "homepage": "https://arunkiddo.github.io/Smarttracker.github.io/",
+  "dependencies": {
+    "@vitejs/plugin-react": "^6.0.1",
+    "gh-pages": "^6.3.0",
+    "idb": "^8.0.3",
+    "lucide-react": "^1.11.0",
+    "pdfjs-dist": "^5.7.284",
+    "react": "^19.2.5",
+    "react-dom": "^19.2.5",
+    "recharts": "^3.8.1",
+    "typescript": "^6.0.3",
+    "vite": "^8.0.10",
+    "xlsx": "^0.18.5"
+  },
+  "devDependencies": {
+    "@types/react": "^19.2.7",
+    "@types/react-dom": "^19.2.3"
+  }
+}
